@@ -1,0 +1,60 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset = "UTF-8">
+  <title>ITP HW 3</title>
+</head>
+
+<style>
+    body{
+        background: black;
+        color: white;
+    }
+    
+    a {
+        color: lightblue;
+    }
+    
+    
+</style>
+
+<body>
+    
+
+  <input type="text" id="mySearch" placeholder="Search">
+  <button id="searchButton">Submit</button>
+
+  <script type="template/handlebars" id="subreddit-template">
+  {{#each items}}
+  <div>
+  Score:{{score}}
+      </div>
+  <a href="{{titleURL}}">
+  {{title}}
+      </a>
+  <div>
+  Comment: {{commentCount}}
+      </div>
+  <div>
+  {{archived}}
+      </div>
+  <div>
+  <b>Description:</b>
+    {{description}}
+      </div>
+  <br>
+  {{else}}
+  <p>Nothing Found</p>
+  {{/each}}
+  </script>
+
+  <div id="subreddit-content"></div>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+  <script src="script.js"></script>
+  <script src="handlebars.js"></script>
+
+
+</body>
+
+</html>
